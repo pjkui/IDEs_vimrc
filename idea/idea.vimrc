@@ -1,8 +1,8 @@
 " M->cmd, A->option, C->control
 " <ESC> - escape, <BS> - backspace, <CR> - return
-
+" 参考idealVim action list https://gist.github.com/matt-snider/3b51f1c56b55324e6c05ec3d93ca4679
 " leader
-let mapleader = " "
+let mapleader = ","
 
 " 启用vim surround功能
 set surround
@@ -109,6 +109,9 @@ noremap <leader>k <ESC>:action GotoPreviousError<CR>
 noremap <leader>l <ESC>:action HighlightUsagesInFile<CR>
 " 粘贴最近复制寄存器
 noremap <leader>; "0p
+
+" Build
+noremap <leader>b <ESC>:action RebuildGradleProject<CR>
 
 " 本行皆为debug所用
 " resume - z
