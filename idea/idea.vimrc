@@ -1,6 +1,7 @@
 " M->cmd, A->option, C->control
 " <ESC> - escape, <BS> - backspace, <CR> - return
 " 参考idealVim action list https://gist.github.com/matt-snider/3b51f1c56b55324e6c05ec3d93ca4679
+" 使用:actionlist 获取所有的actions
 " leader
 let mapleader = ","
 
