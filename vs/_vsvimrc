@@ -14,6 +14,8 @@ set ignorecase
 set backspace=indent,eol,start
 set clipboard=unnamed
 set number
+" leader
+let mapleader = ","
 
 :nnoremap . .<Esc>
 
@@ -128,9 +130,9 @@ set number
 " 参考 https://github.com/VsVim/VsVim/wiki/VsVim-Nonstandard-Behavior
 
 " Use CTRL-s for saving, also in Insert mode
-noremap <C-s>		:update<CR>
-vnoremap <C-s>		<C-C>:update<CR>
-inoremap <C-s>		<C-O>:update<CR>
+noremap <C-s>		:w<CR>
+vnoremap <C-s>		<C-C>:w<CR>
+inoremap <C-s>		<C-O>:w<CR>
 
 "map gd :vsc ReSharper.ReSharper_GotoDeclaration<CR>
 map <Leader>r :vsc ReSharper.ReSharper_Rename<CR>
