@@ -46,10 +46,10 @@ let mapleader = ","
 
 "添加注释
 "vv是为了退出visual line模式
-:vnoremap ci :s/^/\/\/<cr>vv
-:vnoremap cu :s/\/\//<cr>vv
-:nnoremap ci :s/^/\/\/<cr>
-:nnoremap cu :s/\/\//<cr>
+:vnoremap ci :vsc Edit.CommentSelection<CR>
+:vnoremap cu :vsc Edit.UncommentSelection<CR>
+:nnoremap ci :vsc Edit.CommentSelection<CR>
+:nnoremap cu :vsc Edit.UncommentSelection<CR>
 
 "居中显示查找结果
 :nnoremap n nzz
@@ -136,7 +136,8 @@ inoremap <C-s>		<C-O>:w<CR>
 
 "map gd :vsc ReSharper.ReSharper_GotoDeclaration<CR>
 map <Leader>r :vsc ReSharper.ReSharper_Rename<CR>
-map <Leader>f :vsc ReSharper.ReSharper_GotoFileMember<CR>
+map <Leader>f :vsc ReSharper.ReSharper_GotoFile<CR>
+map <Leader>fm :vsc ReSharper.ReSharper_GotoFileMember<CR>
 map <Leader>e :vsc ReSharper.ReSharper_GotoNextErrorInSolution<CR>
 map <Leader>E :vsc ReSharper.ReSharper_GotoPrevErrorInSolution<CR>
 map <Leader>s :vsc ReSharper.ReSharper_SurroundWith<CR>
@@ -154,10 +155,12 @@ map <Leader>ta :vsc ReSharper.ReSharper_UnitTestRunSolution<CR>
 map <Leader>tl :vsc ReSharper.ReSharper_UnitTestSessionRepeatPreviousRun<CR>
 map <Leader>tt :vsc ReSharper.ReSharper_ShowUnitTestSessions<CR>
 map <Leader>/ :vsc ReSharper.ReSharper_LineComment<CR>
-map <Leader>qk :vsc Tools.CustomizeKeyboard<CR>
+map <Leader>kb :vsc Tools.CustomizeKeyboard<CR>
 map <Leader>b :vsc Build.BuildSolution<CR>
 map <Leader><Leader> :vsc Tools.InvokeAceJumpCommand<CR>
 map <Leader>; A;<Esc>
+map <Leader>a :vsc Edit.GoToAll<CR>
+map <Leader>ee :vsc File.OpenFile C:\Users\quinnpan\_vsvimrc<CR>
 
 map ] :vsc ReSharper.ReSharper_GotoNextMethod<CR>
 map [ :vsc ReSharper.ReSharper_GotoPrevMethod<CR>
