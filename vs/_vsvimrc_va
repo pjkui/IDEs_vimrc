@@ -1,0 +1,146 @@
+" 好用的参考链接https://blog.csdn.net/yanchezuo/article/details/78791005
+" 官方的https://github.com/VsVim/VsVim/blob/master/Documentation/Supported%20Features.md
+" resharp https://github.com/keithn/vsvimguide
+
+set ai 
+"自动缩进宽度
+set sw=4 
+set ts=4 
+"关闭高亮显示
+set nohlsearch   
+set is
+set ignorecase
+
+set backspace=indent,eol,start
+set clipboard=unnamed
+set number
+" leader
+let mapleader = ","
+
+:nnoremap . .<Esc>
+
+"重新生成选中项目的解决方案快捷键
+:nnoremap ,b :vsc Build.RebuildSelection<CR>
+
+:inoremap jj <esc>
+:nnoremap <c-j> <c-w>j
+:nnoremap <c-k> <c-w>k
+:nnoremap <c-l> <c-w>l
+:nnoremap <c-h> <c-w>h
+":nnoremap <c-s> :w<CR>
+":inoremap <c-s> :w<CR>
+
+:nnoremap <c-o> :vsc View.NavigateBackward<CR>
+:nnoremap <c-i> :vsc View.NavigateForward<CR>
+
+:nnoremap ,t :vsc Window.NextTab<CR>
+:nnoremap ,r :vsc Window.PreviousTab<CR>
+
+:nnoremap ,n :vsc Window.NextDocumentWindow<CR>
+:nnoremap ,p :vsc Window.PreviousDocumentWindow<CR>
+
+"显示错误列表的快捷键
+:nnoremap cl :vsc View.ErrorList<CR>
+:nnoremap cn :vsc View.NextError<CR>
+:nnoremap cp :vsc View.PreviousError<CR>
+
+"添加注释
+"vv是为了退出visual line模式
+:vnoremap ci :vsc Edit.CommentSelection<CR>
+:vnoremap cu :vsc Edit.UncommentSelection<CR>
+:nnoremap ci :vsc Edit.CommentSelection<CR>
+:nnoremap cu :vsc Edit.UncommentSelection<CR>
+
+"居中显示查找结果
+:nnoremap n nzz
+:nnoremap N Nzz
+:nnoremap * *zz
+:nnoremap # #zz
+"去定义
+:nnoremap gd <C-]>zz
+
+"gq->== 整理代码格式
+:nnoremap gq ==
+:vnoremap gq ==
+
+"format code
+:nnoremap == :vsc Edit.FormatDocument<CR>
+
+"重命名
+:nnoremap gr :vsc VAssistX.RefactorRename<CR>
+
+"查看函数列表 list methods
+:nnoremap zm :vsc VAssistX.ListMethodsInCurrentFile<CR>
+
+"查找所有引用--
+:nnoremap ca :vsc Edit.FindAllReferences<CR>
+"或者使用VA的命令（vs2017中使用va命令比较好）
+" :nnoremap ca :vsc VAssistX.FindReferences<CR>
+
+"打开查看类的对话框
+:nnoremap cs :vsc VAssistX.FindSymbolDialog<CR>
+
+"打开查看文件的对话框
+:nnoremap fs :vsc VAssistX.OpenFileInSolutionDialog<CR>
+
+"open VAOutline
+:nnoremap ol :vsc VAssistX.VAOutline<CR>
+
+"打开解决方案资源管理器
+:nnoremap cv :vsc View.SolutionExplorer<CR>
+
+"查找在当前文件中的引用
+:nnoremap grf :vsc VAssistX.FindReferencesinFile<CR>
+
+"在文件中查找
+:nnoremap ff :vsc Edit.FindinFiles<CR>
+
+"打开文件所在文件夹
+:nnoremap op :vsc File.OpenContainingFolder<CR>
+
+"快速查看方法定义 
+:nnoremap qi :vsc Edit.QuickInfo<CR>
+
+"快速查看方法的所有定义,鼠标在方法parameter上的时候显示的东西
+:nnoremap pi :vsc Edit.ParameterInfo<CR>
+
+"打开查找符号结果
+:nnoremap fs :vsc View.FindSymbolResults<CR>
+
+"打开查找结果1
+:nnoremap zf :vsc View.FindResults1<CR>
+
+"打开查找结果2
+:nnoremap zh :vsc View.FindResults2<CR>
+
+"打开va的在本文件中查找结果
+:nnoremap gf :vsc VAssistX.FindReferencesResults<CR>
+
+"实现interface接口
+:nnoremap gr :vsc VAssistX.RefactorRename<CR>
+
+"查看实现
+:nnoremap gd :vsc VAssistX.GotoImplementation<CR>
+
+"可视模式中，使用 * 和 # 查找
+:vnoremap * "/y/<C-r>/<CR>
+:vnoremap # "/y?<C-r>/<CR>
+
+"打开折叠或者关闭折叠
+:nnoremap <space> za
+
+" 参考 https://github.com/VsVim/VsVim/wiki/VsVim-Nonstandard-Behavior
+
+" Use CTRL-s for saving, also in Insert mode
+noremap <C-s>		:w<CR>
+vnoremap <C-s>		<C-C>:w<CR>
+inoremap <C-s>		<C-O>:w<CR>
+
+map <Leader>kb :vsc Tools.CustomizeKeyboard<CR>
+map <Leader>b :vsc Build.BuildSolution<CR>
+map <Leader><Leader> :vsc Tools.InvokeAceJumpCommand<CR>
+map <Leader>; A;<Esc>
+map <Leader>a :vsc Edit.GoToAll<CR>
+map <Leader>ee :vsc File.OpenFile C:\Users\quinnpan\_vsvimrc<CR>
+
+map zl :so ~/_vsvimrc<CR>
