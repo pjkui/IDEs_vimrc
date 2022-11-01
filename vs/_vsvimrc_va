@@ -1,6 +1,4 @@
 " 好用的参考链接https://blog.csdn.net/yanchezuo/article/details/78791005
-" 官方的https://github.com/VsVim/VsVim/blob/master/Documentation/Supported%20Features.md
-" resharp https://github.com/keithn/vsvimguide
 
 set ai 
 "自动缩进宽度
