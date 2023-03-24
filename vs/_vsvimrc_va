@@ -13,7 +13,7 @@ set backspace=indent,eol,start
 set clipboard=unnamed
 set number
 " leader
-let mapleader = ","
+let mapleader = "\"
 
 :nnoremap . .<Esc>
 
@@ -48,6 +48,7 @@ let mapleader = ","
 :vnoremap cu :vsc Edit.UncommentSelection<CR>
 :nnoremap ci :vsc Edit.CommentSelection<CR>
 :nnoremap cu :vsc Edit.UncommentSelection<CR>
+:nnoremap <c-/> :vsc VAssistX.SelectionToggleLineComment<CR>
 
 "居中显示查找结果
 :nnoremap n nzz
@@ -63,7 +64,6 @@ let mapleader = ","
 
 "format code
 :nnoremap == :vsc Edit.FormatDocument<CR>
-
 "重命名
 :nnoremap gr :vsc VAssistX.RefactorRename<CR>
 
@@ -71,9 +71,9 @@ let mapleader = ","
 :nnoremap zm :vsc VAssistX.ListMethodsInCurrentFile<CR>
 
 "查找所有引用--
-:nnoremap ca :vsc Edit.FindAllReferences<CR>
+":nnoremap ca :vsc Edit.FindAllReferences<CR>
 "或者使用VA的命令（vs2017中使用va命令比较好）
-" :nnoremap ca :vsc VAssistX.FindReferences<CR>
+:nnoremap ca :vsc VAssistX.FindReferences<CR>
 
 "打开查看类的对话框
 :nnoremap cs :vsc VAssistX.FindSymbolDialog<CR>
@@ -114,7 +114,7 @@ let mapleader = ","
 "打开va的在本文件中查找结果
 :nnoremap gf :vsc VAssistX.FindReferencesResults<CR>
 
-"实现interface接口
+"重命名
 :nnoremap gr :vsc VAssistX.RefactorRename<CR>
 
 "查看实现
